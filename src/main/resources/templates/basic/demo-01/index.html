@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+国际化: #号 -->
+<h6 th:text="#{id}">id</h6>
+<h6 th:text="#{name}">name</h6>
+<h6 th:text="#{pwd}">pwd</h6>
+
+变量表达式: $号 -->
+<h6 th:text="${id}">id</h6>
+<h6 th:text="${name}">name</h6>
+<h6 th:text="${pwd}">pwd</h6>
+
+选择表达式: *号 -->
+<h6 th:text="*{id}">id</h6>
+<h6 th:text="*{name}">name</h6>
+<h6 th:text="*{pwd}">pwd</h6>
+</body>
+</html>
