@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.context.Context;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
@@ -30,7 +30,31 @@ public class ThymeleafController {
     }
 
     @RequestMapping("/")
-    public void thymeleaf(HttpServletResponse response) throws IOException {
-        response.sendRedirect("index.html");
+    public ModelAndView thymeleaf(ModelAndView mav) throws IOException {
+        /**
+         * 返回值直接写在参数列表
+         */
+        //ModelAndView mav = new ModelAndView();
+        /**
+         * 变量表达式:
+         * --> th:text="${user.id}"
+         * ----> 相当于(Context).get("user").get("id")
+         */
+        Context song = new Context();
+        song.setVariable("a", "hello");
+        song.setVariable("b", "it's me");
+        song.setVariable("c", "I was wondering if after all these years you'd like to meet.");
+        Context context = new Context();
+        context.setVariable("id", "007");
+        context.setVariable("name", "许小群");
+        context.setVariable("pwd", "123");
+        mav.addObject("user", context);
+        mav.setViewName("basic/index");
+        context.setVariable("song", song);//set的时机没有影响
+        /**
+         * ModelAndView重定向方式
+         */
+        //mav.setViewName("redirect:/index.html");
+        return mav;
     }
 }
