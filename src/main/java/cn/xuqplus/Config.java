@@ -13,23 +13,19 @@ import java.util.Map;
 public class Config {
     @Bean(name = "map")
     public Map map() {
-        Map<String, Map> map = new HashMap();
+        Map map = new HashMap();
         /**
-         * 变量 for basic.demo-01.index
+         * 变量 for basic.demo_01.index
          */
-        Map<String, String> basicDemo01Index = new HashMap();
-        basicDemo01Index.put("id", "007");
-        basicDemo01Index.put("name", "许小群");
-        basicDemo01Index.put("pwd", "123");
-        map.put("basic.demo-01.index", basicDemo01Index);
+        map.put("id_01", "007");
+        map.put("name_01", "许小群");
+        map.put("pwd_01", "123");
         /**
-         * 变量 for basic.demo-02.index
+         * 变量 for basic.demo_02.index
          */
-        Map<String, String> basicDemo02Index = new HashMap();
-        basicDemo01Index.put("id", "hello,");
-        basicDemo01Index.put("name", "it's me,");
-        basicDemo01Index.put("pwd", "I was wondering if after these years you'd like to meet");
-        map.put("basic.demo-02.index", basicDemo02Index);
+        map.put("id_02", "hello,");
+        map.put("name_02", "it's me,");
+        map.put("pwd_02", "I was wondering if after these years you'd like to meet");
         return map;
     }
 }

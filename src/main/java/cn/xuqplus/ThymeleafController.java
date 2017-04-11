@@ -19,14 +19,12 @@ public class ThymeleafController {
     @Qualifier(value = "map")
     @Autowired
     private Map map;
-    //private Map<String, Map> map;//写成这样将形成多一层Map结构
-    //mav.addAllObjects((Map<String, Map>) map.get("map").get(page));
 
     @RequestMapping("/{page}")
     public ModelAndView thymeleaf(@PathVariable String page) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName(page.replaceAll("\\.", "/"));
-        mav.addAllObjects(((Map<String, Map>) map).get(page));
+        mav.addAllObjects(map);
         mav.addObject("msg.a", "hello");
         return mav;
     }
