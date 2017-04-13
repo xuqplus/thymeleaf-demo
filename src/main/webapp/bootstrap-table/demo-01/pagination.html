@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/bootstrap-3.3.7.css" rel="stylesheet">
+    <link href="../../css/bootstrap-table-1.11.0.css" rel="stylesheet">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/bootstrap-table-1.11.0.js"></script>
+    <script src="../../js/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+<table id="table"
+       data-pagination="true"
+       data-search="true"
+       data-toggle="table"
+       data-height="400"
+       data-url="data.json"
+       data-sort-name="id"
+       data-sort-order="asc">
+    <thead>
+    <tr>
+        <th data-field="id" data-sortable="true">id</th>
+        <th data-field="name" data-sortable="true">name</th>
+        <th data-field="pwd" data-sortable="true">pwd</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
