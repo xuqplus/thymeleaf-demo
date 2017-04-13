@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--异步加载,防止页面假死-->
+    <!--<script src="../js/require-2.3.3.js" defer async="true"></script>-->
+    <!--<script src="demo-01/main.js" defer async="true"></script>-->
+
+    <!--同步加载-->
+    <script src="../js/require-2.3.3.js"></script>
+</head>
+<body>
+<div ui-view onclick="main()">主页</div>
+<script>
+    require(["demo-01/main.js"], function () {
+        alert("在require中加载js文件");
+    })
+</script>
+</body>
+</html>
