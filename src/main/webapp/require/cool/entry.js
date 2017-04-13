@@ -1,0 +1,1 @@
+document.write('woc it works well ..');
