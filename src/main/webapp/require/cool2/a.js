@@ -1,0 +1,1 @@
+module.exports = "woc woc it works that way ..";
