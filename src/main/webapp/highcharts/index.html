@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/highcharts-5.0.10.js"></script>
+</head>
+<body>
+<div id="container" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    var myChart = new Highcharts.Chart('container', {
+        chart: {
+            type: 'bar'                         //指定图表的类型，默认是折线图（line）
+        },
+        title: {
+            text: 'highcharts图表'                //指定图表标题
+        },
+        xAxis: {
+            categories: ['苹果', '香蕉', '橙子'] //指定x轴分组
+        },
+        yAxis: {
+            title: {
+                text: '吃水果个数'                //指定y轴的标题
+            }
+        },
+        series: [{                              //指定数据列
+            name: '小明',                       //数据列名
+            data: [1, 0, 4]                     //数据
+        }, {
+            name: '小红',
+            data: [5, 7, 3]
+        }]
+    });
+</script>
+</body>
+</html>
